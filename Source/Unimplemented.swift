@@ -6,9 +6,12 @@ func unimplementedFunction(file: String = #file, function: String = #function, l
 }
 
 extension Observable {
-    static func unimplemented(file: String = #file, function: String = #function, line: Int = #line)
-        -> Observable<Element> {
+    static func unimplemented(
+        file: String = #file,
+        function: String = #function,
+        line: Int = #line
+    ) -> RxSwift.Observable<Element> {
         unimplementedFunction(file: file, function: function, line: line)
-        return Observable<Element>.empty()
+        return RxSwift.Observable<Element>.empty()
     }
 }
